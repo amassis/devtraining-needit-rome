@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element audit="true" extends="task" label="NeedIt" max_length="40" name="x_58872_needit_needit" type="collection">
+        <element attributes="encode_utf8=false" label="Requested for" mandatory="true" max_length="32" name="u_requested_for" reference="sys_user" type="reference"/>
+        <element attributes="edge_encryption_enabled=true" choice="3" default="legal" label="Request type" mandatory="true" max_length="40" name="u_request_type" type="string">
+            <choice>
+                <element inactive_on_update="false" label="Human resources" sequence="0" value="hr"/>
+                <element inactive_on_update="false" label="Legal" sequence="1" value="legal"/>
+                <element inactive_on_update="false" label="Facilities" sequence="2" value="facilities"/>
+                <element inactive_on_update="false" label="Finance" sequence="3" value="finance"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" choice="3" dependent="u_request_type" dependent_on_field="u_request_type" label="What needed" mandatory="true" max_length="40" name="u_what_needed" type="string" use_dependent_field="true">
+            <choice>
+                <element inactive_on_update="false" label="Benefits" sequence="0" value="benefits"/>
+                <element inactive="true" inactive_on_update="true" label="Vacation" sequence="0" value="vacation"/>
+                <element inactive="true" inactive_on_update="true" label="Approval" sequence="1" value="approval"/>
+                <element inactive_on_update="false" label="Vacations" sequence="1" value="vacations"/>
+                <element inactive="true" inactive_on_update="true" label="Budget" sequence="2" value="budget"/>
+                <element inactive_on_update="false" label="Contract" sequence="2" value="contract"/>
+                <element inactive_on_update="false" label="NDA" sequence="3" value="nda"/>
+                <element inactive_on_update="false" label="Maintenance" sequence="4" value="maintenance"/>
+                <element inactive_on_update="false" label="Supplies" sequence="5" value="supplies"/>
+                <element inactive_on_update="false" label="Approvals" sequence="6" value="approvals"/>
+                <element inactive_on_update="false" label="Budgets" sequence="7" value="budgets"/>
+            </choice>
+        </element>
+        <element attributes="edge_encryption_enabled=true" label="When Needed" mandatory="true" max_length="40" name="u_when_needed" type="glide_date_time"/>
+    </element>
+</database>
