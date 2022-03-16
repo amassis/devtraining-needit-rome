@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><database>
+    <element label="NeedItParams" max_length="40" name="x_58872_needit_needitparams" sizeclass="5" type="collection">
+        <element default="24" label="NeedIt Min Lead Time (hours)" max_length="40" name="needit_min_lead_time_hours" type="integer"/>
+        <element label="NeedIt Suggested Lead Time (hours)" max_length="40" name="needit_suggested_lead_time_hours" type="integer"/>
+        <element attributes="ignore_filter_on_new=true" default="javascript:global.getNextObjNumberPadded();" label="Number" max_length="40" name="number" type="string"/>
+        <element choice="3" default="other" display="true" label="Request type" mandatory="true" max_length="40" name="request_type" type="choice">
+            <choice>
+                <element inactive_on_update="false" label="Developer Enablement" value="dev_enable"/>
+                <element inactive_on_update="false" label="Facilities" value="facilities"/>
+                <element inactive_on_update="false" label="Human Resources" value="hr"/>
+                <element inactive_on_update="false" label="Legal" value="legal"/>
+                <element inactive_on_update="false" label="Other" value="other"/>
+            </choice>
+        </element>
+    </element>
+</database>
